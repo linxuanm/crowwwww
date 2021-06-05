@@ -1,18 +1,8 @@
-function randomCrow() {
-    return chrome.runtime.getURL("crows/crow_hd.jpg");
-}
-
-function onDisplay() {
-    
-}
-
 function onLoad() {
-    const div = document.createElement('div');
-    document.body.appendChild(div);
+    var script = document.createElement('script');
+    script.src = chrome.runtime.getURL('injected.js');
 
-    var image = document.createElement("img");
-    image.src = randomCrow();
-    div.appendChild(image);
+    (document.head || document.documentElement).appendChild(script);
 }
 
 onLoad();
