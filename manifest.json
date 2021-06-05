@@ -1,0 +1,37 @@
+{
+    "name": "Crowwwww",
+    "description": "A judgemental crow for your browser",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [{
+        "matches": ["*://*/*"],
+        "js": ["page_load.js"]
+    }],
+    "permissions": [
+        "storage", "activeTab", "scripting"
+    ],
+    "action": {
+        "default_popup": "options.html",
+        "default_icon": {
+            "16": "/images/crow_icon.png",
+            "32": "/images/crow_icon.png",
+            "64": "/images/crow_icon.png",
+            "128": "/images/crow_icon.png"
+        }
+    },
+    "icons": {
+        "16": "/images/crow_icon.png",
+        "32": "/images/crow_icon.png",
+        "64": "/images/crow_icon.png",
+        "128": "/images/crow_icon.png"
+    },
+    "web_accessible_resources": [{
+        "resources": [
+            "crows/crow_hd.jpg"
+        ],
+        "matches": ["*://*/*"]
+    }]
+}
