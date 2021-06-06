@@ -30,7 +30,8 @@
     },
     "web_accessible_resources": [{
         "resources": [
-            "crows/crow_hd.jpg",
+            "crows/crow.jpg",
+            "crows/crow_hd.jpg"
         ],
         "matches": ["*://*/*"]
     }]

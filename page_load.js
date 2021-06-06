@@ -1,11 +1,16 @@
+const crows = [
+    chrome.runtime.getURL("crows/crow_hd.jpg"),
+    chrome.runtime.getURL('crows/crow.jpg')
+];
+
 const config = {
-    'frequency': 5,
-    'duration': 2,
+    'frequency': 30,
+    'duration': 20,
     'size': 3
 };
 
 function randomCrow() {
-    return chrome.runtime.getURL("crows/crow_hd.jpg");
+    return crows[Math.floor(Math.random() * crows.length)];
 }
 
 function showCrow(div, image, shouldLeave) {
@@ -14,14 +19,15 @@ function showCrow(div, image, shouldLeave) {
 
     const windowSize = Math.min(window.innerWidth, window.innerHeight);
     const targetSize = Math.floor(windowSize / config.size);
-    if (image.width > image.height) {
-        image.width = `${targetSize}`;
-    } else {
-        image.height = `${targetSize}`;
-    }
+    image.width = targetSize;
 
-    div.style.top = '100px';
-    div.style.left = '100px';
+    const positionScale = Math.random();
+    const heightMaybe = image.height === 0 ? targetSize : image.height;
+    const posX = Math.floor((window.innerHeight - heightMaybe) * positionScale);
+    const posY = Math.floor((window.innerWidth - image.width) * positionScale);
+
+    div.style.top = `${posX}px`;
+    div.style.left = `${posY}px`;
 
     if (shouldLeave) {
         setTimeout(() => hideCrow(div), config.duration * 1000);
@@ -50,7 +56,7 @@ function routine() {
 }
 
 function onLoad() {
-    setTimeout(routine, 0);
+    setTimeout(routine, 1000);
 }
 
 onLoad();
