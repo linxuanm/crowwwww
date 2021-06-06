@@ -3,7 +3,13 @@ const crows = [
     chrome.runtime.getURL('crows/crow.jpg')
 ];
 
-const config = {
+const sizes = {
+    'small': 3,
+    'medium': 2,
+    'large': 1.5
+};
+
+var config = {
     'enabled': true,
     'frequency': 30,
     'duration': 20,
@@ -37,7 +43,7 @@ function showCrow(div, image, shouldLeave) {
     div.style.display = 'block';
 
     const windowSize = Math.min(window.innerWidth, window.innerHeight);
-    const targetSize = Math.floor(windowSize / config.size);
+    const targetSize = Math.floor(windowSize / sizes[config.size]);
     image.width = targetSize;
 
     const positionScale = Math.random();
@@ -79,7 +85,12 @@ function routine() {
 }
 
 function onLoad() {
-    setTimeout(routine, 1000);
+    chrome.storage.sync.get({
+        'crowwwww': config
+    }, (settings) => {
+        config = settings.crowwwww;
+        setTimeout(routine, 1000);
+    });
 }
 
 onLoad();
