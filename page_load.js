@@ -4,6 +4,7 @@ const crows = [
 ];
 
 const config = {
+    'enabled': true,
     'frequency': 30,
     'duration': 20,
     'size': 3,
@@ -57,7 +58,7 @@ function hideCrow(div) {
 }
 
 function routine() {
-    if (!config.siteList.includes(getHostname(window.location.href))) {
+    if (!config.siteList.includes(getHostname(window.location.href)) || !config.enabled) {
         return;
     }
 

@@ -6,11 +6,36 @@
     <body>
         <p class="title">Crowwwww</p>
         <div class="entry">
+            <div class="description">Enabled</div>
             <label class="toggle">
-                <input type="checkbox">
+                <input type="checkbox" id="enabled">
                 <span class="slider"></span>
             </label>
-            <span>Enabled</span>
         </div>
+        <hr>
+        <div class="entry">
+            <div class="description">Appear Frequency (seconds):</div>
+            <label>
+                <input type="number" class="number" id="frequency" value=30>
+            </label>
+        </div>
+        <div class="entry">
+            <div class="description">Stay Duration (seconds):</div>
+            <label>
+                <input type="number" class="number" id="duration" value="20">
+            </label>
+        </div>
+        <div class="entry">
+            <div class="description">Crow Size:</div>
+            <label>
+                <select name="size" id="size" value="medium">
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
+                </select>
+            </label>
+        </div>
+        <div id="status" class="description"></div>
+        <script type="text/javascript" src="scripts/options.js"></script>
     </body>
 </html>
