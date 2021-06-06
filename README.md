@@ -6,7 +6,7 @@ Crowwwww is a Chrome plugin that keeps you from getting distracted by irrelevant
 
 Having fun watching cat videos on YouTube? Well, let's see how you have fun with this crow staring into your soul:
 
-<img src="demo.png" width="600">
+<img src="/images/demo.png" width="600">
 
 ## Installation
 
@@ -18,5 +18,7 @@ Crows are nice. They are willing to listen to your requests despite your atrocio
 
 - __Appear Frequency (seconds)__: How frequent the crow should appear to judge you.
 - __Stay Duration (seconds)__: How long the crow should stay each time. Set to `-1` for infinite duration.
-- __Crow Size__: Crows come in all sizes. Use the slider to adjust the size of the crow.
+- __Crow Size__: Crows come in all sizes. Select a crow size in the drop-down menu.
 - __Site List__: A list of (work-irrelevant/entertainment) sites on which the crow should appear to remind you to get back to work.
+
+Settings are updated after refreshing the page.
