@@ -1,6 +1,11 @@
 body {
     width: 300px;
-    padding: 0.25em 2em;
+    padding: 5px 20px;
+}
+
+#sites {
+    resize: none;
+    width: 290px;
 }
 
 .title {

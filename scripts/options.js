@@ -2,6 +2,14 @@ const enabled = document.getElementById('enabled');
 const frequency = document.getElementById('frequency');
 const duration = document.getElementById('duration');
 const size = document.getElementById('size');
+const sites = document.getElementById('sites');
+
+function cleanSites(text) {
+    const list = text.split('\n').map(a => a.trim())
+                     .filter(site => site !== '');
+
+    return list;
+}
 
 function save() {
     const config = {
@@ -9,17 +17,11 @@ function save() {
         'frequency': frequency.value,
         'duration': duration.value,
         'size': size.value,
-        'siteList': [
-            'youtube.com',
-            'facebook.com',
-            'reddit.com',
-            '9gag.com',
-            'devrant.com'
-        ]
+        'siteList': cleanSites(sites.value)
     };
 
     chrome.storage.sync.set({'crowwwww': config}, () => {
-        var status = document.getElementById('status');
+        const status = document.getElementById('status');
         status.textContent = 'Settings saved; refresh page to apply';
         setTimeout(() => {
             status.textContent = '';
@@ -32,6 +34,7 @@ function onLoad() {
     frequency.addEventListener('focusout', save);
     duration.addEventListener('focusout', save);
     size.addEventListener("change", save);
+    sites.addEventListener('focusout', save);
 
     chrome.storage.sync.get({
         'crowwwww': {
@@ -52,6 +55,7 @@ function onLoad() {
         frequency.value = config.crowwwww.frequency;
         duration.value = config.crowwwww.duration;
         size.value = config.crowwwww.size;
+        sites.value = config.crowwwww.siteList.join('\n');
     });
 }
 
