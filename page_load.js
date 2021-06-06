@@ -6,11 +6,29 @@ const crows = [
 const config = {
     'frequency': 30,
     'duration': 20,
-    'size': 3
+    'size': 3,
+    'siteList': [
+        'youtube.com',
+        'facebook.com',
+        'reddit.com',
+        '9gag.com',
+        'devrant.com'
+    ]
 };
 
 function randomCrow() {
     return crows[Math.floor(Math.random() * crows.length)];
+}
+
+function getHostname(url) {
+    var host = url.indexOf("//") > -1 ? url.split('/')[2] : url.split('/')[0];
+    host = host.split(':')[0].split('?')[0];
+
+    if (host.startsWith('www.')) {
+        host = host.substring(4);
+    }
+
+    return host;
 }
 
 function showCrow(div, image, shouldLeave) {
@@ -39,10 +57,14 @@ function hideCrow(div) {
 }
 
 function routine() {
+    if (!config.siteList.includes(getHostname(window.location.href))) {
+        return;
+    }
+
     const div = document.createElement('div');
     div.style.display = 'none';
     div.style.position = 'fixed';
-    div.style.zIndex = '6969';
+    div.style.zIndex = '69696969';
     document.body.appendChild(div);
 
     const image = document.createElement("img");
