@@ -8,7 +8,7 @@
         "js": ["page_load.js"]
     }],
     "permissions": [
-        "storage", "activeTab", "scripting"
+        "storage", "activeTab"
     ],
     "action": {
         "default_popup": "options.html",
