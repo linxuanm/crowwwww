@@ -1,6 +1,6 @@
 {
     "name": "Crowwwww",
-    "description": "A judgemental crow for your browser",
+    "description": "A judgmental crow for your browser",
     "version": "1.0.0",
     "manifest_version": 3,
     "content_scripts": [{

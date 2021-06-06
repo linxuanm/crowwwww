@@ -36,6 +36,7 @@ function onLoad() {
     size.addEventListener("change", save);
     sites.addEventListener('focusout', save);
 
+    // default config
     chrome.storage.sync.get({
         'crowwwww': {
             'enabled': false,

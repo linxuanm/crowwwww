@@ -9,6 +9,7 @@ const sizes = {
     'large': 1.5
 };
 
+// default config
 var config = {
     'enabled': true,
     'frequency': 30,
