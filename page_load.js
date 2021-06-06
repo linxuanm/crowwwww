@@ -47,10 +47,11 @@ function showCrow(div, image, shouldLeave) {
     const targetSize = Math.floor(windowSize / sizes[config.size]);
     image.width = targetSize;
 
-    const positionScale = Math.random();
+    const xScale = Math.random();
+    const yScale = Math.random();
     const heightMaybe = image.height === 0 ? targetSize : image.height;
-    const posX = Math.floor((window.innerHeight - heightMaybe) * positionScale);
-    const posY = Math.floor((window.innerWidth - image.width) * positionScale);
+    const posX = Math.floor((window.innerHeight - heightMaybe) * xScale);
+    const posY = Math.floor((window.innerWidth - image.width) * yScale);
 
     div.style.top = `${posX}px`;
     div.style.left = `${posY}px`;
