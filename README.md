@@ -10,7 +10,7 @@ Having fun watching cat videos on YouTube? Well, let's see how you have fun with
 
 ## Installation
 
-This plugin can be installed from its [page at Chrome Web Store](). That's it.
+This plugin can be installed from its [page at Chrome Web Store](https://chrome.google.com/webstore/detail/crowwwww/ijnloopngpeiofbploocgggghjocpgol/). That's it.
 
 ## Settings
 
