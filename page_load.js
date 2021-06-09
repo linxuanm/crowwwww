@@ -79,7 +79,7 @@ function routine() {
     const image = document.createElement("img");
     div.appendChild(image);
 
-    const forever = config.duration >= config.frequency || config.duration === -1;
+    const forever = config.duration >= config.frequency || config.duration == -1;
     showCrow(div, image, !forever);
     if (!forever) {
         setInterval(() => showCrow(div, image, true), config.frequency * 1000);
